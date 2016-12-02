@@ -1,0 +1,52 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background: black;
+}
+
+input {
+  background: grey;
+  font-size: 18px;
+}
+
+form {
+  display: inline-block;
+}
+
+.centered {
+  text-align: center;
+}
+
+#pizzaSize {
+  font-weight: 800;
+}
+
+/*Made few changes to .mover class*/
+.mover {
+  position: fixed;
+  width: 73.333px;
+  height: 100px;
+  z-index: -1;
+  will-change: transform; /* add to create compositor layers for moving background pizzas */
+  backface-visibility: hidden; /* add to boost performance in browsers which support hardware acceleration */
+}
+
+.randomPizzaContainer {
+  float: left;
+  display: flex;
+}
+
+.randomPizzaContainer:after {
+  content: "";
+  display: table;
+  clear:both;
+}
+
+.container {
+  background-color: rgba(240, 60, 60, 0.8);
+}

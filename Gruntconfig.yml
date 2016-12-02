@@ -1,0 +1,11 @@
+src: src/
+dest: dist/
+
+jsSrcDir: views/js/
+jsDir: views/js/
+
+cssSrcDir: css/
+cssDir: css/
+
+imgSrcDir: views/images/
+imgDir: views/images/
