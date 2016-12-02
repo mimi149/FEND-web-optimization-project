@@ -102,8 +102,8 @@ Here are the results of the above optimization:
 * Calculated the number of moving pizzas (instead of the redundant original number 200) based on window.innerHeight.
 
     There are 8 columns. Each row has a height of 256px.
-    Get the viewport height to determine the number of rows necessary to display then multiply it
-    by the number of columns to determine how many pizzas are needed to display.
+    Get the viewport height to determine the number of rows, then multiply it
+    by the number of columns to determine how many pizzas needed to display.
 
 * Put updatePositions function inside callUpdatePositions to use the closure movers. 
 
@@ -112,7 +112,7 @@ Here are the results of the above optimization:
 * Moved all the calculations out of the loop whenever we can:
 
     document.body.scrollTop triggers forced synchronous layouts, so it must be called only one time before entering the loop.
-    Precalculated the 5 different values of phase before the for loop of updating the movers.
+    Precalculated the 5 different values of phase.
 
 * Used style.transform instead of style.left, accordingly to this article:
   https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
@@ -133,6 +133,7 @@ Here is the final code in updatePositions function:
 ```
 
 * Made few changes to .mover class in style.css.
+
   To create compositor layers for moving background pizzas:
 
 ``` 
