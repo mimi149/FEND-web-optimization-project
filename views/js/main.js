@@ -143,6 +143,8 @@ function callUpdatePositions() {
 	var movers = document.getElementsByClassName('mover');
 
 	function updatePositions() {
+		ticking = false;
+    // var currentScrollY = latestKnownScrollY;
 		// frame++;
 		// window.performance.mark("mark_start_frame");
 
@@ -175,14 +177,31 @@ function callUpdatePositions() {
 		// 	var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
 		// 	logAverageFrame(timesToUpdatePosition);
 		// }
-		requestAnimationFrame(updatePositions);
+		// requestAnimationFrame(updatePositions);
 	}
-
+  console.log("update calling");
 	updatePositions();
 }
 
 // Our animation callback only listen for scroll events
-window.addEventListener('scroll', callUpdatePositions, false);
+// window.addEventListener('scroll', callUpdatePositions, false);
+
+// window.addEventListener('scroll', function () {
+//    requestAnimationFrame(callUpdatePositions);
+// });
+
+//var last_known_scroll_position = 0;
+var ticking = false;
+
+window.addEventListener('scroll', function(e) {
+  //last_known_scroll_position = window.scrollY; I don't use this.
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      callUpdatePositions();
+    });
+  }
+  ticking = true;
+});
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function () {
