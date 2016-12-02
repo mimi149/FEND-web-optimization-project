@@ -179,10 +179,15 @@ function callUpdatePositions() {
 		// }
 		// requestAnimationFrame(updatePositions);
 	}
-  console.log("update calling");
+	end = new Date();
 	updatePositions();
+
+	console.log('Calling updatePositions: ' + (end.getTime() - start.getTime()) + ' msec');
+	start = end;
 }
 
+var end, start;
+start = new Date();
 // Our animation callback only listen for scroll events
 // window.addEventListener('scroll', callUpdatePositions, false);
 
