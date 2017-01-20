@@ -3,13 +3,13 @@
  
 The challenge was to optimize certain portions of an existing website for different metrics.
 
-1. Optimize the index.html page to achive a Page Speed Insights ranking of 90 or better on both mobile and desktop.
+1. Optimize the index.html page to achieve a Page Speed Insights ranking of 90 or better on both mobile and desktop.
 2. Optimize the slider widget on views/pizza.html to resize in < 5ms as indicated in the console.
 3. Optimize the views/pizza.html to achieve 60FPS or better on the scroll event.
 
 ### Courses
 * [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
-* [Website Performance Optimisation](https://www.udacity.com/course/website-performance-optimization--ud884)
+* [Website Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
 
 ### References
 * [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks)
